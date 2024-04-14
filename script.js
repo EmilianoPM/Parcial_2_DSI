@@ -1,4 +1,3 @@
-// Variables globales
 let jugador1 = true;
 let casillas = document.querySelectorAll(".casilla");
 let tiempoInicio = Date.now();
@@ -22,7 +21,7 @@ function iniciarJuego() {
 
   document.getElementById(
     "mensaje"
-  ).textContent = `${jugador1Nombre}'s Turn (X)`;
+  ).textContent = `Es el turno de: ${jugador1Nombre}'`;
 
   casillas.forEach((casilla) => {
     casilla.addEventListener("click", movimientoJugador);
