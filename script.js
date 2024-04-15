@@ -11,10 +11,6 @@ document
   .getElementById("reiniciarBtn")
   .addEventListener("click", reiniciarJuego);
 
-casillas.forEach((casilla) => {
-  casilla.addEventListener("click", movimientoJugador);
-});
-
 function iniciarJuego() {
   jugador1Nombre = document.getElementById("jugador1").value;
   jugador2Nombre = document.getElementById("jugador2").value;
@@ -30,10 +26,13 @@ function iniciarJuego() {
   clearInterval(intervaloCronometro);
   intervaloCronometro = setInterval(actualizarCronometro, 1000);
 }
+casillas.forEach((casilla) => {
+  casilla.addEventListener("click", movimientoJugador);
+});
 
 function movimientoJugador(event) {
   if (!juegoTerminado) {
-    let valorCasilla = event.target.innerHTML;
+    let valorCasilla = event.target.style.backgroundImage;
     if (!valorCasilla.length) {
       event.target.style.backgroundImage = `url('${
         jugador1 ? "./img/Gatobanana.jpeg" : "./img/Gatorana.png"
@@ -50,7 +49,9 @@ function movimientoJugador(event) {
       validarLinea(2, 4, 6);
 
       const turnoActual = jugador1 ? jugador1Nombre : jugador2Nombre;
-      document.getElementById("mensaje").textContent = `${turnoActual}'s Turn`;
+      document.getElementById(
+        "mensaje"
+      ).textContent = `Es el turno de: ${turnoActual}`;
 
       if (
         Array.from(casillas).every((casilla) => casilla.style.backgroundImage)
@@ -63,11 +64,11 @@ function movimientoJugador(event) {
 
 function validarLinea(c1, c2, c3) {
   if (
-    casillas[c1].innerHTML.length &&
-    casillas[c1].innerHTML === casillas[c2].innerHTML &&
-    casillas[c2].innerHTML === casillas[c3].innerHTML
+    casillas[c1].style.backgroundImage.length &&
+    casillas[c1].style.backgroundImage === casillas[c2].style.backgroundImage &&
+    casillas[c2].style.backgroundImage === casillas[c3].style.backgroundImage
   ) {
-    mostrarGanador(casillas[c1].innerHTML);
+    mostrarGanador(casillas[c1].style.backgroundImage);
   }
 }
 
@@ -97,7 +98,7 @@ function actualizarCronometro() {
 }
 
 function reiniciarJuego() {
-  casillas.forEach((casilla) => (casilla.innerHTML = ""));
+  casillas.forEach((casilla) => (casilla.style.backgroundImage = ""));
   jugador1 = true;
   tiempoInicio = Date.now();
   juegoTerminado = false;
@@ -105,7 +106,7 @@ function reiniciarJuego() {
   intervaloCronometro = setInterval(actualizarCronometro, 1000);
   document.getElementById(
     "mensaje"
-  ).textContent = `${jugador1Nombre}'s Turn (X)`;
+  ).textContent = `Es el turno de: ${jugador1Nombre}`;
   document.getElementById("cronometro").textContent = "Tiempo: 0 segundos";
   document.getElementById("msjGanador").textContent = "";
   document.getElementById("mensaje").textContent = "Siguiente turno:";
