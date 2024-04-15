@@ -17,18 +17,17 @@ function iniciarJuego() {
 
   document.getElementById(
     "mensaje"
-  ).textContent = `Es el turno de: ${jugador1Nombre}'`;
+  ).textContent = `Es el turno de: ${jugador1Nombre}`;
 
-  casillas.forEach((casilla) => {
-    casilla.addEventListener("click", movimientoJugador);
-  });
+  casillas.forEach((casilla) =>
+    casilla.addEventListener("click", movimientoJugador)
+  );
 
   clearInterval(intervaloCronometro);
   intervaloCronometro = setInterval(actualizarCronometro, 1000);
+
+  casillas.forEach((casilla) => casilla.removeAttribute("disabled"));
 }
-casillas.forEach((casilla) => {
-  casilla.addEventListener("click", movimientoJugador);
-});
 
 function movimientoJugador(event) {
   if (!juegoTerminado) {
@@ -110,4 +109,6 @@ function reiniciarJuego() {
   document.getElementById("cronometro").textContent = "Tiempo: 0 segundos";
   document.getElementById("msjGanador").textContent = "";
   document.getElementById("mensaje").textContent = "Siguiente turno:";
+
+  casillas.forEach((casilla) => casilla.removeAttribute("disabled"));
 }
