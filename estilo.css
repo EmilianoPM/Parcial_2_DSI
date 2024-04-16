@@ -8,6 +8,9 @@ body {
     display: grid;
     place-items: center;
     overflow: hidden;
+    background: url(/Parcial_2_DSI/img/Fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .tablero {
@@ -23,8 +26,16 @@ body {
     height: 90px;
     display: grid;
     place-items: center;
-    border: 1px solid red;
+    background-color: rgb(255, 249, 249);
     background-size: cover;
+    border-radius: .75rem;
+}
+
+.tablero .casilla:hover {
+    background-color: rgb(245, 233, 218);
+}
+.tablero .casilla:active{
+    border-color: none  ;
 }
 .tablero{
     width: 276px;
