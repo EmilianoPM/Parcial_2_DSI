@@ -96,6 +96,8 @@ border-radius: 5px 5px 5px 5px;
     background-color: rgb(255, 249, 249);
     background-size: cover;
     border-radius: .75rem;
+    border-color: rgb(222, 152, 72) ;
+    border-width: 2px;
 }
 
 .tablero .casilla:hover {
