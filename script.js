@@ -6,14 +6,14 @@ let intervaloCronometro;
 let jugador1Nombre;
 let jugador2Nombre;
 
-document.getElementById("iniciarBtn").addEventListener("click", iniciarJuego);
-document
-  .getElementById("reiniciarBtn")
-  .addEventListener("click", reiniciarJuego);
-
-function iniciarJuego() {
+const iniciarJuego = () => {
   jugador1Nombre = document.getElementById("jugador1").value;
   jugador2Nombre = document.getElementById("jugador2").value;
+
+  if (jugador1Nombre.trim() === "" || jugador2Nombre.trim() === "") {
+    alert("Por favor, ingresa los nombres de ambos jugadores.");
+    return;
+  }
 
   document.getElementById(
     "mensaje"
@@ -27,9 +27,9 @@ function iniciarJuego() {
   intervaloCronometro = setInterval(actualizarCronometro, 1000);
 
   casillas.forEach((casilla) => casilla.removeAttribute("disabled"));
-}
+};
 
-function movimientoJugador(event) {
+const movimientoJugador = (event) => {
   if (!juegoTerminado) {
     let valorCasilla = event.target.style.backgroundImage;
     if (!valorCasilla.length) {
@@ -59,9 +59,9 @@ function movimientoJugador(event) {
       }
     }
   }
-}
+};
 
-function validarLinea(c1, c2, c3) {
+const validarLinea = (c1, c2, c3) => {
   if (
     casillas[c1].style.backgroundImage.length &&
     casillas[c1].style.backgroundImage === casillas[c2].style.backgroundImage &&
@@ -69,34 +69,34 @@ function validarLinea(c1, c2, c3) {
   ) {
     mostrarGanador(casillas[c1].style.backgroundImage);
   }
-}
+};
 
-function mostrarGanador(jugador) {
+const mostrarGanador = (jugador) => {
   const nombreGanador = jugador ? jugador1Nombre : jugador2Nombre;
   document.getElementById(
     "msjGanador"
   ).textContent = `${nombreGanador} ganó la ronda!`;
   juegoTerminado = true;
   clearInterval(intervaloCronometro);
-}
+};
 
-function mostrarEmpate() {
+const mostrarEmpate = () => {
   if (!juegoTerminado) {
     const ganador = jugador1 ? jugador2Nombre : jugador1Nombre;
     document.getElementById("mensaje").textContent = `¡Empate!`;
     juegoTerminado = true;
     clearInterval(intervaloCronometro);
   }
-}
+};
 
-function actualizarCronometro() {
+const actualizarCronometro = () => {
   const tiempoActual = Math.floor((Date.now() - tiempoInicio) / 1000);
   document.getElementById(
     "cronometro"
   ).textContent = `Tiempo: ${tiempoActual} segundos`;
-}
+};
 
-function reiniciarJuego() {
+const reiniciarJuego = () => {
   casillas.forEach((casilla) => (casilla.style.backgroundImage = ""));
   jugador1 = true;
   tiempoInicio = Date.now();
@@ -111,4 +111,9 @@ function reiniciarJuego() {
   document.getElementById("mensaje").textContent = "Siguiente turno:";
 
   casillas.forEach((casilla) => casilla.removeAttribute("disabled"));
-}
+};
+
+document.getElementById("iniciarBtn").addEventListener("click", iniciarJuego);
+document
+  .getElementById("reiniciarBtn")
+  .addEventListener("click", reiniciarJuego);
