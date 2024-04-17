@@ -16,18 +16,27 @@ body {
     display: flex;
     justify-content: space-between;
 }
-#iniciarBtn{
-    transform: translateX(50%);
-    color:#ffdada;
-    padding:15px;
-    display:block;
-    width:200px;
-    text-align:center;
-    margin:10px;
-    background-color:#ae8441;
-    border: none;
-    border-radius: 5px 5px 5px 5px;
-}
+    #iniciarBtn{
+        color:#ffdada;
+        padding:15px;
+        display:block;
+        width:200px;
+        text-align:center;
+        margin:10px;
+        background-color:#ae8441;
+        border: none;
+        border-radius: 5px 5px 5px 5px;}
+        #reiniciarBtn{
+            color:#ffdada;
+            padding:15px;
+            display:block;
+            width:200px;
+            text-align:center;
+            margin:20px;
+            background-color:#ae8441;
+            border: none;
+            border-radius: 5px 5px 5px 5px;
+        }
 #jugadores input{
      font-family: 'Overpass', sans-serif;
     font-size: 100%;
