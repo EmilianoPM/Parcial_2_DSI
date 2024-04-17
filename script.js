@@ -22,7 +22,7 @@ const iniciarJuego = () => {
   casillas.forEach((casilla) =>
     casilla.addEventListener("click", movimientoJugador)
   );
-
+  tiempoInicio = Date.now();
   clearInterval(intervaloCronometro);
   intervaloCronometro = setInterval(actualizarCronometro, 1000);
 
