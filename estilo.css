@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+* {
+    font-family: 'Bebas Neue';
+}
+
+#Titulo {
+    font-size: 300%;
+    padding: 10px;
+    margin-bottom: -10px;
+}
+
+#botonIniciar {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
 body {
     width: 100vw;
     height: 100vh;
