@@ -17,7 +17,6 @@ body {
     justify-content: space-between;
 }
 #iniciarBtn{
-    transform: translateX(50%);
     color:#ffdada;
     padding:15px;
     display:block;
@@ -39,6 +38,11 @@ body {
     box-sizing: border-box;
     border: none;
     border-radius: 5px 5px 5px 5px;
+}
+#botonIniciar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .tablero {
     justify-content: center;
