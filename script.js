@@ -34,7 +34,7 @@ const movimientoJugador = (event) => {
     let valorCasilla = event.target.style.backgroundImage;
     if (!valorCasilla.length) {
       event.target.style.backgroundImage = `url('${
-        jugador1 ? "./img/Gatobanana.jpeg" : "./img/Gatorana.png"
+        jugador1 ? "./img/gPou.png" : "./img/gRana.png"
       }')`;
       jugador1 = !jugador1;
 

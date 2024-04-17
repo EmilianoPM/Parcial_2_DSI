@@ -8,8 +8,26 @@ body {
     display: grid;
     place-items: center;
     overflow: hidden;
+    background: url(/img/Fondo.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
-
+#usuarios{
+    display: flex;
+    justify-content: space-between;
+}
+#jugadores input{
+     font-family: 'Overpass', sans-serif;
+    font-size: 100%;
+    width: 50%;
+    height: 40px;
+    margin: 10px;
+    margin-bottom: 20px;
+    padding: 5px 5px 5px 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+}
 .tablero {
     justify-content: center;
     display: grid;
@@ -23,8 +41,16 @@ body {
     height: 90px;
     display: grid;
     place-items: center;
-    border: 1px solid red;
+    background-color: rgb(255, 249, 249);
     background-size: cover;
+    border-radius: .75rem;
+}
+
+.tablero .casilla:hover {
+    background-color: rgb(245, 233, 218);
+}
+.tablero .casilla:active{
+    border-color: none  ;
 }
 .tablero{
     width: 276px;
