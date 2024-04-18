@@ -2,6 +2,9 @@
 
 * {
     font-family: 'Bebas Neue';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 #Titulo {
@@ -15,14 +18,14 @@
     margin-bottom: 10px;
 }
 body {
-    width: 100vw;
-    height: 100vh;
+    height: 100vh; 
+    width: 100vw; 
     color: black;
     margin: 0;
     display: grid;
     place-items: center;
     overflow: hidden;
-    background: url(/img/Fondo.png);
+    background: url(img/Fondo.png);
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -31,8 +34,7 @@ body {
     justify-content: space-between;
 }
 #iniciarBtn{
-    font-size: x-large;
-    color:#fff6f6;
+    color:#ffdada;
     padding:15px;
     display:block;
     width:200px;
@@ -43,28 +45,26 @@ body {
     border-radius: 5px 5px 5px 5px;
 }
 #reiniciarBtn{
-    font-size: x-large;
-    justify-content: center;
-    align-items: center;
-    color:#fff6f6;
-    padding:5px;
-    display:block;
-    width:200px;
-    margin:5px;
-    background-color:#ae8441;
-    border: none;
-    border-radius: 5px 5px 5px 5px;
+        color:#ffdada;
+        padding:15px;
+        display:block;
+        width:200px;
+        text-align:center;
+        margin:20px;
+        background-color:#ae8441;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
     }
 #iniciarBtn{
-color:#fff6f6;
-padding:15px;
-display:block;
-width:200px;
-text-align:center;
-margin:10px;
-background-color:#ae8441;
-border: none;
-border-radius: 5px 5px 5px 5px;
+        color:#ffdada;
+        padding:15px;
+        display:block;
+        width:200px;
+        text-align:center;
+        margin:10px;
+        background-color:#ae8441;
+        border: none;
+        border-radius: 5px 5px 5px 5px;
 }
 #jugadores input{
      font-family: 'Overpass', sans-serif;
@@ -73,6 +73,7 @@ border-radius: 5px 5px 5px 5px;
     height: 40px;
     margin: 10px;
     margin-bottom: 20px;
+    padding: 5px 5px 5px 10px;
     box-sizing: border-box;
     border: none;
     border-radius: 5px 5px 5px 5px;
@@ -98,8 +99,6 @@ border-radius: 5px 5px 5px 5px;
     background-color: rgb(255, 249, 249);
     background-size: cover;
     border-radius: .75rem;
-    border-color: rgb(222, 152, 72) ;
-    border-width: 2px;
 }
 
 .tablero .casilla:hover {
@@ -117,18 +116,21 @@ border-radius: 5px 5px 5px 5px;
     position: relative;
     top: 10px;
     height: 1rem;
-    font-size: xx-large;
 }
 #msjGanador{
     position: relative;
     top: 10px;
     height: 1rem;
-    font-size: xx-large;
-    padding: 2%;
-}
-#cronometro{
-    color:#71572d;
-    font-size: large;
-    padding:3px;
 }
 
+@media (max-width: 450px) {
+    #usuarios {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        align-items: center;
+    }
+    #usuarios #jugador2 {
+        margin-top: -10px;
+    }
+}
