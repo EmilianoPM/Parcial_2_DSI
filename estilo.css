@@ -24,7 +24,6 @@ body {
     margin: 0;
     display: grid;
     place-items: center;
-    overflow: hidden;
     background: url(img/Fondo.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -52,6 +51,7 @@ body {
         width:200px;
         text-align:center;
         margin:20px;
+        margin-top: -10px;
         background-color:#ae8441;
         border: none;
         border-radius: 5px 5px 5px 5px;
